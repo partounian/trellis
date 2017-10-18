@@ -8,12 +8,12 @@ wordpress_sites:
       - canonical: example.test
         redirects:
           - www.example.test
-    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    local_path: ../example-com-bedrock # path targeting local Bedrock site directory (relative to Ansible root)
     admin_email: admin@example.test
     multisite:
       enabled: false
     ssl:
-      enabled: false
+      enabled: true
       provider: self-signed
     cache:
       enabled: false

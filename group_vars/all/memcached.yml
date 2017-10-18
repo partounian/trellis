@@ -1,0 +1,4 @@
+memcached_packages_custom:
+  memcached: absent
+  php-memcache: absent
+  php-memcached: absent

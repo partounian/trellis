@@ -1,0 +1,2 @@
+php_extensions_custom:
+  php7.1-apcu: "{{ apt_package_state }}"
