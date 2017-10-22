@@ -1,0 +1,16 @@
+# cache.appcache, your document html and data
+location ~* \.(?:manifest|appcache|html?|xml|json)$ {
+  add_header Cache-Control "max-age=0";
+}
+
+# Media: images, icons, video, audio, HTC
+location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+  access_log off;
+  add_header Cache-Control "max-age=2592000";
+}
+
+# CSS and Javascript
+location ~* \.(?:css|js)$ {
+  access_log off;
+  add_header Cache-Control "max-age=2592000, immutable";
+}
