@@ -1,0 +1,24 @@
+---
+- import_playbook: variable-check.yml
+  vars:
+    playbook: database.yml
+
+- name: Test Connection
+  hosts: web:&{{ env }}
+  gather_facts: false
+  vars:
+    dynamic_user: false
+  roles:
+    - { role: connection, tags: [connection, always] }
+
+- name: WP Database {{ action }}
+  hosts: web:&{{ env }}
+  remote_user: "{{ web_user }}"
+  pre_tasks:
+    - name: Ensure site is valid
+      connection: local
+      fail:
+        msg: "Site `{{ site | default('') }}` is not valid. Available sites to deploy: {{ wordpress_sites.keys() | join(', ') }}"
+      when: wordpress_sites[site | default('')] is not defined
+  roles:
+    - database
