@@ -15,11 +15,5 @@ wordpress_sites:
       enabled: false
     ssl:
       enabled: true
-      stapling_enabled: false
-      provider: cloudflare-origin-ca
-      client_cert_url: 'https://support.cloudflare.com/hc/en-us/article_attachments/201243967/origin-pull-ca.pem'
-    cloudflare_origin_ca:
-      hostnames:
-        - '*.example.com'
     cache:
       enabled: true
