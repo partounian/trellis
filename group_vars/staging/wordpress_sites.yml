@@ -15,5 +15,6 @@ wordpress_sites:
       enabled: false
     ssl:
       enabled: true
+      provider: self-signed
     cache:
       enabled: true
