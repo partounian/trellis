@@ -20,4 +20,4 @@
 
 - name: cloudflare-origin-ca
   src: TypistTech.trellis-cloudflare-origin-ca
-  version: 0.5.1
+  version: 0.6.0

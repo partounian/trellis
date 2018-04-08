@@ -22,3 +22,5 @@ vault_wordpress_sites:
       secure_auth_salt: "generateme"
       logged_in_salt: "generateme"
       nonce_salt: "generateme"
+
+vault_cloudflare_origin_ca_key: v1.0-xxxxxxxxxxx
