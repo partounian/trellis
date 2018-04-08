@@ -1,0 +1,2 @@
+deploy_initialize_after:
+  - "{{ playbook_dir }}/vendor/roles/trellis-backup-during-deploy/tasks/main.yml"

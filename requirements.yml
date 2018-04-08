@@ -21,3 +21,6 @@
 - name: cloudflare-origin-ca
   src: TypistTech.trellis-cloudflare-origin-ca
   version: 0.6.0
+
+- src: git+https://github.com/ItinerisLtd/trellis-backup-during-deploy.git
+  version: 0.1.0
