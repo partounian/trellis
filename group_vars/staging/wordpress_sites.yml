@@ -15,6 +15,8 @@ wordpress_sites:
       enabled: false
     ssl:
       enabled: true
-      provider: self-signed
+      stapling_enabled: false
+      provider: cloudflare-origin-ca
+      client_cert_url: 'https://support.cloudflare.com/hc/en-us/article_attachments/201243967/origin-pull-ca.pem'
     cache:
       enabled: true
