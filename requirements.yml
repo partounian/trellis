@@ -23,3 +23,6 @@
 
 - src: git+https://github.com/ItinerisLtd/trellis-backup-during-deploy.git
   version: 0.1.0
+
+- src: https://github.com/ItinerisLtd/trellis-cve-2018-6389
+  version: 0.1.0
