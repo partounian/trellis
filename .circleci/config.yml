@@ -49,6 +49,17 @@ orbs:
                 ansible-playbook --syntax-check -e env=development deploy.yml
                 ansible-playbook --syntax-check -e env=development dev.yml
                 ansible-playbook --syntax-check -e env=development server.yml
+                ansible-playbook --syntax-check -e env=development rollback.yml
+                ansible-playbook --syntax-check -e xdebug_tunnel_inventory_host=1 xdebug-tunnel.yml
+
+      lint:
+        executor: python-3
+        steps:
+          - run: python --version
+          - checkout
+          - run: sudo pip install ansible-lint
+          - run: ansible-lint --version
+          - run: ansible-lint deploy.yml dev.yml server.yml rollback.yml xdebug-tunnel.yml
 
 workflows:
   syntax-check:
@@ -58,23 +69,26 @@ workflows:
           python-version: '3'
           ansible-version: ''
       - trellis/syntax-check:
+          name: syntax-check-python-3-ansible-2.9
+          python-version: '3'
+          ansible-version: ~=2.9.0
+      - trellis/syntax-check:
           name: syntax-check-python-3-ansible-2.8
           python-version: '3'
           ansible-version: ~=2.8.0
-      - trellis/syntax-check:
-          name: syntax-check-python-3-ansible-2.7
-          python-version: '3'
-          ansible-version: ~=2.7.0
 
       - trellis/syntax-check:
           name: syntax-check-python-2-ansible-latest
           python-version: '2'
           ansible-version: ''
       - trellis/syntax-check:
+          name: syntax-check-python-2-ansible-2.9
+          python-version: '2'
+          ansible-version: ~=2.9.0
+      - trellis/syntax-check:
           name: syntax-check-python-2-ansible-2.8
           python-version: '2'
           ansible-version: ~=2.8.0
-      - trellis/syntax-check:
-          name: syntax-check-python-2-ansible-2.7
-          python-version: '2'
-          ansible-version: ~=2.7.0
+  lint:
+    jobs:
+      - trellis/lint

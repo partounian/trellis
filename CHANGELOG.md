@@ -1,5 +1,30 @@
-### Head
-* wordpress-setup: Block dependency manager files by Nginx ([#1116](https://github.com/roots/trellis/pull/1116))
+### HEAD
+* Support Ansible 2.9 ([#1169](https://github.com/roots/trellis/pull/1169))
+* [BREAKING] Remove `nginx_includes_deprecated` feature ([#1173](https://github.com/roots/trellis/pull/1173))
+* Bump Ansible version_tested_max to 2.8.10 ([#1167](https://github.com/roots/trellis/pull/1167))
+* Bump Ansible requirement to 2.8.0 ([#1147](https://github.com/roots/trellis/pull/1147))
+
+### 1.4.0: April 2nd, 2020
+* Update PHP to 7.4 ([#1164](https://github.com/roots/trellis/pull/1164))
+* Update `wp_cli_version` to 2.4.0 ([#1131](https://github.com/roots/trellis/pull/1131))
+* Fix `subjectAltName` for self-signed certificates ([#1128](https://github.com/roots/trellis/pull/1128))
+* `composer install` without `--no-scripts` during deploy ([#1133](https://github.com/roots/trellis/pull/1133))
+* Allow `composer install` with `--classmap-authoritative` during deploy ([#1132](https://github.com/roots/trellis/pull/1132))
+* Use modern SSL config for Nginx ([#1127](https://github.com/roots/trellis/pull/1127))
+* Fix `DEPLOY_UNFINISHED` not being copied over to `release` folder ([#1145](https://github.com/roots/trellis/pull/1145))
+* Deploy: Remove untracked files from project folder ([#1146](https://github.com/roots/trellis/pull/1146))
+* Nginx: Block `composer/installed.json` ([#1150](https://github.com/roots/trellis/pull/1150))
+* Run `git clean` after checking `git clone` is successful ([#1151](https://github.com/roots/trellis/pull/1151))
+* Lint: Fix: `[206] Variables should have spaces before and after: {{ var_name }}` ([#1152](https://github.com/roots/trellis/pull/1152))
+* Lint: Fix: `[306] Shells that use pipes should set the pipefail option ([#1153](https://github.com/roots/trellis/pull/1153))
+* Lint: Fix `[301] Commands should not change things if nothing needs doing ([#1139](https://github.com/roots/trellis/pull/1139))
+* Void rolled back releases ([#1148](https://github.com/roots/trellis/pull/1148))
+* Add `WP_DEBUG_LOG` to `.env` on deploy ([#1160](https://github.com/roots/trellis/pull/1160))
+
+### 1.3.0: December 7th, 2019
+* Add `git_sha` and `release_version` to `.env` on deploy ([#1124](https://github.com/roots/trellis/pull/1124))
+* Lower self-signed certificate expiry time for macOS Cataline support ([#1120](https://github.com/roots/trellis/pull/1120))
+* Block dependency manager files in Nginx ([#1116](https://github.com/roots/trellis/pull/1116))
 
 ### 1.2.0: October 11th, 2019
 * Lets Encrypt ACME v2 support ([#1114](https://github.com/roots/trellis/pull/1114))
